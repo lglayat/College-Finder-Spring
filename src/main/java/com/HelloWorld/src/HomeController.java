@@ -14,7 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 /**
  * Handles requests for the application home page.
  */
@@ -23,20 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/** 
-	 * create a collegehash object file which populates itself from csv file
-	 * 
-	 * Instantiate college hash object here  so controller can access it
-	 * 
-	 * 
-	 */
-	
-	
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	CollegeList collegeList = new CollegeList();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -44,6 +30,7 @@ public class HomeController {
 		
 		String jerry = "jerry";
 		model.addAttribute("friend", jerry);
+//		this.collegeList.showColleges();
 		
 		return "home";
 	}

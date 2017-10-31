@@ -27,7 +27,7 @@
     <div class="ui secondary menu">
       <div class="container" style="margin-left: auto; margin-right: auto;">
         <div class="item">
-          <a href="/"><h3>Home</h3></a>
+          <a href="/src/"><h3>Home</h3></a>
         </div>
         <div class="item">
           <a href="/colleges"><h3>Colleges</h3></a>
@@ -36,7 +36,7 @@
          <a href="/programs"><h3>Programs</h3></a>
         </div>
         <div class="item">
-         <a href="/search"><h3>Advanced Search</h3></a>
+         <a href="/src/search"><h3>Advanced Search</h3></a>
         </div>
 
       
