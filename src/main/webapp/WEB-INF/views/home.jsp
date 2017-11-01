@@ -13,7 +13,7 @@
       <div class="ui header">
         <div class="ui blue menu">
           <div class="item">
-            <a href="/"><h1>College Finder</h1></a>
+            <a href="/src/"><h1>College Finder</h1></a>
           </div>
         
          
@@ -28,10 +28,10 @@
           <a href="/src/"><h3>Home</h3></a>
         </div>
         <div class="item">
-          <a href="/colleges"><h3>Colleges</h3></a>
+          <a href="/src/colleges"><h3>Colleges</h3></a>
         </div>
         <div class="item">
-         <a href="/programs"><h3>Programs</h3></a>
+         <a href="/src/programs"><h3>Programs</h3></a>
         </div>
         <div class="item">
          <a href="/src/search"><h3>Advanced Search</h3></a>

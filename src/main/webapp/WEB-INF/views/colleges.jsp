@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <%@ page session="false" %>
 
 <html>
@@ -24,7 +26,7 @@
     <!-- Open Nav Bar -->
     <div class="ui secondary menu">
       <div class="container" style="margin-left: auto; margin-right: auto;">
-         <div class="item">
+        <div class="item">
           <a href="/src/"><h3>Home</h3></a>
         </div>
         <div class="item">
@@ -36,6 +38,15 @@
         <div class="item">
          <a href="/src/search"><h3>Advanced Search</h3></a>
         </div>
+        
+        
+        
+        COLLEGES
+ 		<ul>
+        		<c:forEach begin="0" end="${fn:length(colleges) - 1 }" var="index">
+        			<li><c:out value="${colleges[index]}" /></li>
+        		</c:forEach>
+        </ul>
 
       
       </div>
@@ -43,9 +54,3 @@
   </div>
 
 
-<p>Search Results </p>
-
-
-
-
-</body>

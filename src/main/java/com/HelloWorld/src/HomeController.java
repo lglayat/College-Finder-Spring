@@ -1,6 +1,7 @@
 package com.HelloWorld.src;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -26,7 +27,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-
+		System.out.println(collegeList.colleges.size());
 		
 		String jerry = "jerry";
 		model.addAttribute("friend", jerry);
@@ -37,20 +38,40 @@ public class HomeController {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Locale locale, Model model) {
-		System.out.println(model.toString());
 		
 		return "search";
 	}
 	
+	@RequestMapping(value = "/colleges", method = RequestMethod.GET)
+	public String colleges(Locale locale, Model model) {
+		String[] names = new String[2000];
+		names = collegeList.getNames();
+
+		model.addAttribute("colleges", names);
+		
+		return "colleges";
+	}
+	
+	@RequestMapping(value = "/programs", method = RequestMethod.GET)
+	public String programs(Locale locale, Model model) {
+		model.addAttribute("programs", collegeList.programs);
+		
+		return "programs";
+	}
+	
+	
 	@RequestMapping(value = "/searchResults", method = RequestMethod.POST)
 	public String searchResults(@RequestParam HashMap<String,String> allRequestParams, ModelMap model) {
 	
-		System.out.println("Hello!1");
-		for ( String key : allRequestParams.keySet())
-		{
-			System.out.println("For the key: "+ key+" The value in the map is: " +allRequestParams.get(key) );
-		}
-		System.out.println("");
+		ArrayList<College> results = new ArrayList<College>();
+		results = this.collegeList.advancedSearch(allRequestParams);
+		
+		System.out.println("There are " + results.size() + " results for your query");
+
+//		for ( String key : allRequestParams.keySet()){
+//			System.out.println("For the key: "+ key+" The value in the map is: " +allRequestParams.get(key) );
+//		}
+		
 		return "searchResults";
 	}
 
