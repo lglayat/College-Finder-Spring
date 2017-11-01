@@ -7,7 +7,7 @@
 <head>
 	<title>Home</title>
 	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
-	<link rel="stylesheet" type="text/css" href="../resources/style.css">
+	
 </head>
 <body style="display:flex;min-height:100vh;flex-direction: column;" data-no-turbolink="true">
 
@@ -39,18 +39,21 @@
          <a href="/src/search"><h3>Advanced Search</h3></a>
         </div>
         
-        
-        
+              
+      </div>
+    </div>
+  </div>
+  
+   
         COLLEGES
  		<ul>
         		<c:forEach begin="0" end="${fn:length(colleges) - 1 }" var="index">
         			<li><c:out value="${colleges[index]}" /></li>
         		</c:forEach>
         </ul>
-
-      
-      </div>
-    </div>
-  </div>
+  
+  
+  </body>
+  </html>
 
 

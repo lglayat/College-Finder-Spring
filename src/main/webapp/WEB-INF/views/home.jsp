@@ -5,7 +5,69 @@
 <head>
 	<title>Home</title>
 	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
-	<link rel="stylesheet" type="text/css" href="../resources/style.css">
+	<link rel="stylesheet" type="text/css" href="/Users/mac/Documents/workspace-sts-3.9.0.RELEASE/HelloWorld/src/main/webapp/resources/style.css">
+	<style type="text/css">
+      div.index-body{
+        max-width: 1000px;
+        margin:0 auto;
+      }
+      div.secondary h3 {
+        font-weight:normal;
+        font-color:#000;
+        text-transform: uppercase;
+        letter-spacing:2px;
+        font-size:12px;
+      }
+      div.index-body p {
+        color: #464646;
+        text-align: center;
+        font-size:1.3em;
+        margin-top:1em;
+        line-height: 1.2em;
+        font-weight:bold;
+      }
+      div.index-body ul{
+        padding:0;
+        margin:0;
+      }
+      div.index-body li{
+        list-style: none;
+        float:left;
+        width:300px;
+        height:100px;
+        border-style: solid;
+        border-color: #ccc;
+        border-width: 1px;
+        padding:10px;
+        margin:10px;
+        vertical-align: middle;
+        text-align: center;
+        font-size:16px;
+        color:#464646;
+      }
+
+      div.homepageHero{
+        width:100%;
+        height:400px;
+        background-image: url('https://static.pexels.com/photos/207691/pexels-photo-207691.jpeg');
+        background-position: center;
+        background-size: cover;
+      }
+      #heroOverlay{
+        width:100%;
+        height:400px;
+        background-color:black;
+        opacity: .3;
+      }
+      div.homepageHero h1{
+          text-align: center;
+          position: relative;
+          top:-65%;
+          font-size:3em;
+          color:white;
+      }
+
+    </style>
 </head>
 <body style="display:flex;min-height:100vh;flex-direction: column;" data-no-turbolink="true">
 
@@ -42,9 +104,6 @@
     </div>
   </div>
 
-
-
-<p>${friend} </p>
 
 
  <div class="index-body">

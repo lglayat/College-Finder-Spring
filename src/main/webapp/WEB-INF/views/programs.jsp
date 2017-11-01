@@ -38,8 +38,12 @@
         <div class="item">
          <a href="/src/search"><h3>Advanced Search</h3></a>
         </div>
-        
-        
+         
+      </div>
+    </div>
+  </div>
+  
+     
         <h3>PROGRAMS</h3>
         
         <ul>
@@ -48,8 +52,6 @@
         		</c:forEach>
         </ul>
         
-       
-      
-      </div>
-    </div>
-  </div>
+        
+</body>
+</html>

@@ -39,22 +39,23 @@
          <a href="/src/search"><h3>Advanced Search</h3></a>
         </div>
 
-      
       </div>
     </div>
   </div>
 <!-- End header  -->
 
-		<form action="/src/searchResults" method="POST">
-    
+		<form class="ui form" action="/src/searchResults" method="POST">
+    		
+    		<div class="six wide field">
+    	
         <label>State <span class="color-red"></span></label>
-        <input type="text" class="form-control margin-bottom-20" name="state" required></input>
+        <input class="field" type="text" class="form-control margin-bottom-20" name="state" required></input>
 
         <label>SAT <span class="color-red"></span></label>
-        <input type="text" class="form-control margin-bottom-20" name="sat" required></input>                          
+        <input class="field" type="text" class="form-control margin-bottom-20" name="sat" required></input>                          
 
         <label>ACT<span class="color-red"></span></label>
-        <input type="text" class="form-control margin-bottom-20" name="act" required></input>
+        <input class="field" type="text" class="form-control margin-bottom-20" name="act" required></input>
         
         <select name="major">
 			<option>English Language and Literature</option>
@@ -78,7 +79,8 @@
 			<option>History</option>
 		</select>
         
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="large ui blue basic button">Search</button>
+        	</div>
     	</form>
  
 </body>

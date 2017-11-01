@@ -50,8 +50,10 @@
         		<c:forEach begin="0" end="${fn:length(results) - 1 }" var="index">
         			
         			<li><c:out value="${results.get(index).name}" /></li>
-        			<p>Location: <c:out value="${results.get(index).getState()}" /> </p>
- 				<p>Yearly Tuition: <c:out value="${results.get(index).getCost()}" /> </p>
+        			<p>
+        			Location: <c:out value="${results.get(index).getState()}" /> </br>
+        			Yearly Tuition: <c:out value="${results.get(index).getCost()}" />
+        			</p>
         			
         		</c:forEach>
         </ul>
