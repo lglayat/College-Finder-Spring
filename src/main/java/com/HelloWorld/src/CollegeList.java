@@ -1,6 +1,7 @@
 package com.HelloWorld.src;
 import java.util.*;
 import java.io.*;
+import java.net.URL;
 
 
 public class CollegeList {
@@ -18,23 +19,33 @@ public class CollegeList {
 	}
 	
 	public void populateList() {
-		String csvFile = "/Users/mac/Documents/workspace-sts-3.9.0.RELEASE/HelloWorld/src/main/java/com/HelloWorld/src/data.csv";
+		
+		URL path = CollegeList.class.getResource("data.csv");
+		File csvFile = new File(path.getFile());
 		BufferedReader br = null;
 		String line = "";
 		String csvSplitBy =",";
 		int counter = 0;
+	
 
         try {
 
             br = new BufferedReader(new FileReader(csvFile));
-            while ((line = br.readLine()) != null) {
+            
+            while ((line = br.readLine()) != null) 
+            {
+            		//Ignore header of CSV file
             		if(counter > 0) {
+            			
+            				//Split Line by commas and save it as an array            				
                         String[] arr = line.split(csvSplitBy);
-
+                        
+                        	//Create new college object
                         College c = new College();
                         
                         c.id = counter + 1;
                         
+                        //Set attributes like Name, Location and average SAT/ACT scores 
                         if(arr[0] != "NULL") {
                         	c.setName(arr[0]);
                         }
@@ -47,6 +58,8 @@ public class CollegeList {
                         if(arr[7] != "NULL") {
                             c.setACT(arr[7]);
                         }
+                        
+                        //Make associations with colleges and programs
                         if(arr[8].equals("1")) {
                         	   c.addProgram("Agriculture");
                         }
@@ -105,13 +118,14 @@ public class CollegeList {
         						c.setCost(Integer.parseInt(arr[46]));
                         }
 
+                        //Add to list of colleges
                         this.colleges.add(c);
             		}
                 counter++;
             }
         	} catch (FileNotFoundException e) {
                 e.printStackTrace();
-         } catch (IOException e) {
+        } catch (IOException e) {
                 e.printStackTrace(); 
         } finally {
             if (br != null) {
@@ -125,6 +139,7 @@ public class CollegeList {
 	}
 	
 	public void showColleges() {
+
 		for(int i = 0; i < this.colleges.size()/3 ; i++) {
 			System.out.println("College: " + colleges.get(i).name);
 			System.out.println(colleges.get(i).state);
@@ -135,9 +150,11 @@ public class CollegeList {
 		}
 	}
 	
+	
 	public ArrayList getColleges() {
 		return this.colleges;
 	}
+	
 	
 	public String[] getNames() {
 		String[] names = new String[7705];
@@ -148,6 +165,7 @@ public class CollegeList {
 		
 		return names;
 	}
+	
 	
 	public ArrayList advancedSearch(HashMap<String,String> formInput) {
 

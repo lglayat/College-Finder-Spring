@@ -10,55 +10,50 @@
 </head>
 <body style="display:flex;min-height:100vh;flex-direction: column;" data-no-turbolink="true">
 
-<div style="flex:1;">
-      <div class="ui header">
-        <div class="ui blue menu">
-          <div class="item">
-            <a href="/src/"><h1>College Finder</h1></a>
-          </div>
-        
-         
-          </div>
-        </div>
-    <!-- Close Header -->
+	<div style="flex: 1;">
+		<div class="ui header">
+			<div class="ui blue menu">
+				<div class="item">
+					<a href="/src/"><h1>College Finder</h1></a>
+				</div>
+			</div>
+		</div>
+		<!-- Close Header -->
 
-    <!-- Open Nav Bar -->
-    <div class="ui secondary menu">
-      <div class="container" style="margin-left: auto; margin-right: auto;">
-         <div class="item">
-          <a href="/src/"><h3>Home</h3></a>
-        </div>
-        <div class="item">
-          <a href="/src/colleges"><h3>Colleges</h3></a>
-        </div>
-        <div class="item">
-         <a href="/src/programs"><h3>Programs</h3></a>
-        </div>
-        <div class="item">
-         <a href="/src/search"><h3>Advanced Search</h3></a>
-        </div>
+		<!-- Open Nav Bar -->
+		<div class="ui secondary menu">
+			<div class="container" style="margin-left: auto; margin-right: auto;">
+				<div class="item">
+					<a href="/src/"><h3>Home</h3></a>
+				</div>
+				<div class="item">
+					<a href="/src/colleges"><h3>Colleges</h3></a>
+				</div>
+				<div class="item">
+					<a href="/src/programs"><h3>Programs</h3></a>
+				</div>
+				<div class="item">
+					<a href="/src/search"><h3>Advanced Search</h3></a>
+				</div>
 
-      
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
+	<!-- End header  -->
 
-
-		<p>Search Results </p>
+	<p>Search Results </p>
 		
-		<ul>
-        		<c:forEach begin="0" end="${fn:length(results) - 1 }" var="index">
+	<ul>
+        	<c:forEach begin="0" end="${fn:length(results) - 1 }" var="index">
         			
-        			<li><c:out value="${results.get(index).name}" /></li>
-        			<p>
-        			Location: <c:out value="${results.get(index).getState()}" /> </br>
-        			Yearly Tuition: <c:out value="${results.get(index).getCost()}" />
-        			</p>
+        		<li><c:out value="${results.get(index).name}" /></li>
+        		<p>
+        		Location: <c:out value="${results.get(index).getState()}" /> </br>
+        		Yearly Tuition: <c:out value="${results.get(index).getCost()}" />
+        		</p>
         			
-        		</c:forEach>
-        </ul>
-
-
-
+        	</c:forEach>
+	</ul>
 
 </body>
+</html>
