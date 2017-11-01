@@ -64,7 +64,6 @@
 			<option>Communications and Journalism</option>
 			<option>Computer and Information Sciences</option>
 			<option>Culinary Services</option>
-			<option>Engineering</option>
 			<option>Culinary Services </option>
 			<option>Engineering </option>
 			<option>Legal Professions and Studies </option>

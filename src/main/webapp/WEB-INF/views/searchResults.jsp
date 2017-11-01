@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page session="false" %>
 
 <html>
@@ -43,7 +44,17 @@
   </div>
 
 
-<p>Search Results </p>
+		<p>Search Results </p>
+		
+		<ul>
+        		<c:forEach begin="0" end="${fn:length(results) - 1 }" var="index">
+        			
+        			<li><c:out value="${results.get(index).name}" /></li>
+        			<p>Location: <c:out value="${results.get(index).getState()}" /> </p>
+ 				<p>Yearly Tuition: <c:out value="${results.get(index).getCost()}" /> </p>
+        			
+        		</c:forEach>
+        </ul>
 
 
 

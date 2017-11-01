@@ -29,10 +29,11 @@ public class CollegeList {
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
             		if(counter > 0) {
-            			// use comma as separator
                         String[] arr = line.split(csvSplitBy);
 
                         College c = new College();
+                        
+                        c.id = counter + 1;
                         
                         if(arr[0] != "NULL") {
                         	c.setName(arr[0]);
@@ -91,19 +92,19 @@ public class CollegeList {
                         if(arr[37].equals("1")) {
         					c.addProgram("Social Sciences");
                         }
-                        
                         if(arr[42].equals("1")) {
         					c.addProgram("Visual and Performing Arts");
                         }
-                  
                         if(arr[44].equals("1")) {
              				c.addProgram("Business");
                          }
-                       
                         if(arr[45].equals("1")) {
         					c.addProgram("History");
                         }
-                        
+                        if(arr[46].equals("NULL") == false) {
+        						c.setCost(Integer.parseInt(arr[46]));
+                        }
+
                         this.colleges.add(c);
             		}
                 counter++;
@@ -152,6 +153,7 @@ public class CollegeList {
 
 		ArrayList<College> results = new ArrayList<College>();
 
+		//Save input from search query		
 		String state = formInput.get("state");
 		String major = formInput.get("major");
 		int ACT = 0;
@@ -169,40 +171,27 @@ public class CollegeList {
 		System.out.println("major: " + major);
 
 		for(int i = 0; i < this.colleges.size(); i++ ) {			
+			//Check for major			
 			if(this.colleges.get(i).programs.contains(major) == true) {
-				if(this.colleges.get(i).state.equals(state)) {
-					
-					if(SAT > 0 && Integer.valueOf(this.colleges.get(i).SAT) < SAT) {
-						results.add(this.colleges.get(i));
+				//Check for state
+				if(this.colleges.get(i).state.equals(state)) {	
+					//Check for SAT					
+					if( this.colleges.get(i).ACT.equals("NULL") == false ) {
+						if(SAT > 0 && Integer.valueOf(this.colleges.get(i).SAT) < SAT) {
+							results.add(this.colleges.get(i));
+						}
 					}
-					
-					else if( ACT > 0 && Integer.valueOf(this.colleges.get(i).ACT) < ACT ) {
-						results.add(this.colleges.get(i));
+					//Check for ACT					  
+					if( this.colleges.get(i).ACT.equals("NULL") == false ) {
+						if(Integer.valueOf(this.colleges.get(i).ACT) < ACT) {
+							results.add(this.colleges.get(i));
+						}
 					}
-//					
-//					
-//					
-//					System.out.println("------------------------------------------------");
-//					System.out.println(this.colleges.get(i).SAT.getClass());
-//					System.out.println(Integer.valueOf(this.colleges.get(i).SAT));
-//					System.out.println(Integer.valueOf(this.colleges.get(i).SAT).getClass());
-//					System.out.println("------------------------------------------------");
-
-
-					
-					
-					
-					results.add(this.colleges.get(i));
+			
 				}
 			}
 			
 		}
-		
-		
-		
-
-
-		
 		
 		return results;
 	}

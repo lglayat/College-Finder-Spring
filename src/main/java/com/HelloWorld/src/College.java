@@ -4,6 +4,7 @@ import java.util.*;
 
 public class College {
 
+	public int id;
 	public String name;
 	public String state;
 	public String ACT;
@@ -17,20 +18,40 @@ public class College {
 		
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getState() {
+		return this.state;
 	}
 	
 	public void setState(String state) {
 		this.state = state;
 	}
 	
+	public String getACT() {
+		return this.ACT;
+	}
+	
 	public void setACT(String ACT) {
 		this.ACT = ACT;
 	}
 	
+	public String getSAT() {
+		return this.SAT;
+	}
+	
 	public void setSAT(String SAT) {
 		this.SAT = SAT;
+	}
+	
+	public int getCost() {
+		return this.cost;
 	}
 	
 	public void setCost(int cost) {
@@ -49,5 +70,5 @@ public class College {
 		this.programs.add(program);
 	}
 	
-	
+		
 }

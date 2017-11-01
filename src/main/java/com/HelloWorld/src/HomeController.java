@@ -27,12 +27,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		System.out.println(collegeList.colleges.size());
-		
-		String jerry = "jerry";
-		model.addAttribute("friend", jerry);
-//		this.collegeList.showColleges();
-		
+				
 		return "home";
 	}
 	
@@ -44,9 +39,9 @@ public class HomeController {
 	
 	@RequestMapping(value = "/colleges", method = RequestMethod.GET)
 	public String colleges(Locale locale, Model model) {
+		
 		String[] names = new String[2000];
 		names = collegeList.getNames();
-
 		model.addAttribute("colleges", names);
 		
 		return "colleges";
@@ -54,6 +49,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/programs", method = RequestMethod.GET)
 	public String programs(Locale locale, Model model) {
+		
 		model.addAttribute("programs", collegeList.programs);
 		
 		return "programs";
@@ -64,8 +60,11 @@ public class HomeController {
 	public String searchResults(@RequestParam HashMap<String,String> allRequestParams, ModelMap model) {
 	
 		ArrayList<College> results = new ArrayList<College>();
+		//Make the search and save results		
 		results = this.collegeList.advancedSearch(allRequestParams);
 		
+		System.out.println(results.get(1));
+		model.addAttribute("results", results);
 		System.out.println("There are " + results.size() + " results for your query");
 
 //		for ( String key : allRequestParams.keySet()){
