@@ -52,6 +52,9 @@ public class CollegeList {
                         if(arr[2] != "NULL") {
                            c.setState(arr[2]);
                         }
+                        if(arr[3] != "NULL") {
+                            c.setHomepage(arr[3]);
+                         }
                         if(arr[6] != "NULL") {
                            c.setSAT(arr[6]);
                         }
@@ -138,7 +141,7 @@ public class CollegeList {
         }	
 	}
 	
-	public void showColleges() {
+	public void printColleges() {
 
 		for(int i = 0; i < this.colleges.size()/3 ; i++) {
 			System.out.println("College: " + colleges.get(i).name);
@@ -150,11 +153,9 @@ public class CollegeList {
 		}
 	}
 	
-	
 	public ArrayList getColleges() {
 		return this.colleges;
 	}
-	
 	
 	public String[] getNames() {
 		String[] names = new String[7705];

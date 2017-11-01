@@ -43,12 +43,15 @@
 	<!-- End header  -->
   
    
-	COLLEGES
+	
+	<div class="ui container">
+	<h4>Colleges</h4>
  	<ul>
         	<c:forEach begin="0" end="${fn:length(colleges) - 1 }" var="index">
         		<li><c:out value="${colleges[index]}" /></li>
         	</c:forEach>
 	</ul>
+	</div>
   
   
 </body>

@@ -58,6 +58,10 @@ public class College {
 		this.cost = cost;
 	}
 	
+	public String getHomepage() {
+		return this.homepage;
+	}
+	
 	public void setHomepage(String homepage) {
 		this.homepage = homepage;
 	}

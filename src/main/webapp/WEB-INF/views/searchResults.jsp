@@ -45,13 +45,14 @@
 		
 	<ul>
         	<c:forEach begin="0" end="${fn:length(results) - 1 }" var="index">
-        			
+        		<div class="ui card">
         		<li><c:out value="${results.get(index).name}" /></li>
         		<p>
         		Location: <c:out value="${results.get(index).getState()}" /> </br>
-        		Yearly Tuition: <c:out value="${results.get(index).getCost()}" />
+        		Yearly Tuition: <c:out value="${results.get(index).getCost()}" /></br>
+        		Homepage: <a href="http://<c:out value="${results.get(index).getHomepage()}" />">Link</a>
         		</p>
-        			
+        		</div>	
         	</c:forEach>
 	</ul>
 

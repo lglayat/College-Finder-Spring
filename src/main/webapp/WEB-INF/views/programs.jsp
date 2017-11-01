@@ -43,15 +43,16 @@
     </div>
   </div>
   
-     
-        <h3>PROGRAMS</h3>
+     <div class="ui container"> 
+        <h4>Programs</h4>
         
         <ul>
         		<c:forEach begin="0" end="${fn:length(programs) - 1 }" var="index">
         			<li><c:out value="${programs[index]}" /></li>
         		</c:forEach>
         </ul>
-        
+      </div>  
+      
         
 </body>
 </html>

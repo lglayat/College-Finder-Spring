@@ -49,13 +49,8 @@
     	
         <label>State <span class="color-red"></span></label>
         <input class="field" type="text" class="form-control margin-bottom-20" name="state" required></input>
-
-        <label>SAT <span class="color-red"></span></label>
-        <input class="field" type="text" class="form-control margin-bottom-20" name="sat" ></input>                          
-
-        <label>ACT<span class="color-red"></span></label>
-        <input class="field" type="text" class="form-control margin-bottom-20" name="act" ></input>
         
+        <label>Major<span class="color-red"></span></label>
         <select name="major">
 			<option>English Language and Literature</option>
 			<option>Education</option>
@@ -77,6 +72,15 @@
 			<option>Business </option>
 			<option>History</option>
 		</select>
+		<br>
+		
+		<label>SAT Score (Max. 1600) <span class="color-red"></span></label>
+        <input class="field" type="text" class="form-control margin-bottom-20" name="sat" ></input>                          
+  
+        <label>**OR**<span class="color-red"></span></label><br>
+  
+        <label>ACT Score(Max. 36)<span class="color-red"></span></label>
+        <input class="field" type="text" class="form-control margin-bottom-20" name="act" ></input>
         
         <button type="submit" class="large ui blue basic button">Search</button>
         	</div>

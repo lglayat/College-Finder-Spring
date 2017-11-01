@@ -51,7 +51,6 @@ public class HomeController {
 		return "programs";
 	}
 	
-	
 	@RequestMapping(value = "/searchResults", method = RequestMethod.POST)
 	public String searchResults(@RequestParam HashMap<String,String> allRequestParams, ModelMap model) {
 	
